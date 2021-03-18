@@ -158,7 +158,7 @@ def F(y,P):
     return valorf
 
 #Se ordena lo pertinente para el método, se usan los valores de altura que ingresó el usuario para inicializar el intervalo de valores que requiere el método
-ys_rk45=np.linspace(altura_inicial,altura_final,cant_puntos)
+ys_rk45=np.linspace(altura_inicial,altura_final,cant_puntos+1)
 metodoRK = 'RK45'
 presiones_RKscipy= spint.solve_ivp(F, [altura_inicial,altura_final] , [valor_inicial_presion],t_eval=ys_rk45,method=metodoRK)
 ys_de_rk45=presiones_RKscipy.t
